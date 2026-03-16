@@ -32,9 +32,10 @@ createApp({
                 { name: 'Vue.js', icon: 'fab fa-vuejs', color: '#4fc08d' },
                 { name: 'FastAPI', icon: 'fas fa-bolt', color: '#009688' },
                 { name: 'MySQL', icon: 'fas fa-database', color: '#00758f' },
+                { name: 'POSTGRESQL', icon: 'fas fa-database', color: '#00758f'},
                 { name: 'Bootstrap', icon: 'fab fa-bootstrap', color: '#7952b3' },
-                { name: '.NET', icon: 'fas fa-code', color: '#512BD4' },      // ✅ new
-                { name: 'Laravel', icon: 'fas fa-fire', color: '#FF2D20' }    // ✅ new
+                { name: 'ASP.NET', icon: 'fas fa-code', color: '#512BD4' },      
+                { name: 'Laravel', icon: 'fas fa-fire', color: '#FF2D20' }    
             ],
 
             projects: [
