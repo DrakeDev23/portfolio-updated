@@ -80,7 +80,6 @@ createApp({
                     tags: [
                         { name: 'TailwindCSS', color: 'purple' },
                         { name: 'JavaScript', color: 'blue' },
-                        { name: 'TailwindCSS', color: 'green' }
                     ],
                 },
                 {
@@ -209,3 +208,84 @@ createApp({
         }
     }
 }).mount('#app');
+
+function toggleChat() {
+    const chatWindow = document.getElementById("chatWindow");
+    if (!chatWindow) return;
+    chatWindow.classList.toggle("d-none");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const botName = "Drake Assistant";
+    const chatNameEl = document.getElementById("chatName");
+    const chatNameMsgEl = document.getElementById("chatNameMsg");
+    const input = document.getElementById("userInput");
+    const chat = document.getElementById("chatMessages");
+
+    if (chatNameEl) chatNameEl.textContent = botName;
+    if (chatNameMsgEl) chatNameMsgEl.textContent = botName;
+    if (!input || !chat) return; 
+
+    input.addEventListener("keydown", function(e) {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+
+    function sendMessage() {
+        const rawMessage = input.value.trim();
+        if (!rawMessage) return;
+
+        chat.innerHTML += `
+        <div class="d-flex justify-content-end mb-2">
+            <div class="bg-primary text-white p-2 rounded-pill" style="max-width:75%;">
+                ${rawMessage}
+            </div>
+        </div>
+        `;
+        input.value = "";
+        chat.scrollTop = chat.scrollHeight;
+
+        const typingId = "typing-" + Date.now();
+        chat.innerHTML += `
+        <div class="d-flex mb-2" id="${typingId}">
+            <img src="images/mypic.jpg" class="rounded-circle me-2" width="28" height="28">
+            <div>
+                <div class="small text-muted">${botName}</div>
+                <div class="bg-white p-2 rounded shadow-sm">
+                    <span class="text-muted">Drake is typing...</span>
+                </div>
+            </div>
+        </div>
+        `;
+        chat.scrollTop = chat.scrollHeight;
+
+        const message = rawMessage.toLowerCase();
+        let reply = "";
+        if (message.includes("hi") || message.includes("hello")) reply = "Hello I'm Drake's assistant!";
+        else if (message.includes("projects") || message.includes("project")) reply = "Drake built E-commerce, Jeepney Finder, and more check out here <a href='#projects'>Projects</a>";
+        else if (message.includes("skills")) reply = "I’m familiar with Drake’s technical skills and expertise. He is proficient in HTML, CSS, JavaScript, Vue.js, PHP, Python, C, C++, C#, TailwindCSS, Bootstrap, MySQL, PostgreSQL, and frameworks like Laravel, FastAPI, and ASP.NET. Drake uses these skills to build full-stack web applications, AI projects, and interactive platforms that solve real-world problems.";
+        else if (message.includes("contact")) reply = "Use the contact form here <a href='#contact'>Contact form</a>";
+        else if (message.includes("who are you")) reply = "I am Drake Assistant, an AI-powered virtual assistant designed to help you navigate this portfolio, answer questions about projects and skills, and provide guidance on contacting Drake. I can give you information about past events, ongoing projects, and assist you in exploring the website efficiently. Think of me as your friendly guide to everything Drake has built and accomplished!";
+        else reply = "Sorry I don't understand yet";
+
+        setTimeout(() => {
+            const typingEl = document.getElementById(typingId);
+            if (typingEl) typingEl.remove();
+
+            chat.innerHTML += `
+            <div class="d-flex mb-2">
+                <img src="images/mypic.jpg" class="rounded-circle me-2" width="28" height="28">
+                <div>
+                    <div class="small text-muted">${botName}</div>
+                    <div class="bg-white p-2 text-black rounded shadow-sm">
+                        ${reply}
+                    </div>
+                </div>
+            </div>
+            `;
+            chat.scrollTop = chat.scrollHeight;
+        }, 1000);
+    }
+});

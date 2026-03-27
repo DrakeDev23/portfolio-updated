@@ -223,6 +223,45 @@
             </div>
         </footer>
     </div>
+<button onclick="toggleChat()" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg d-flex justify-content-center align-items-center chat-btn">
+    <i class="fas fa-comment-dots fs-3"></i>
+</button>
+<button onclick="toggleChat()" 
+class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-flex justify-content-center align-items-center"
+style="width:60px;height:60px;">
+    <i class="fas fa-comment-dots fs-5"></i>
+</button>
+<div id="chatWindow" class="position-fixed bottom-0 end-0 m-4 d-none" 
+    style="width: 400px; max-width: 90vw; height: 600px; z-index:1100;">
+    <div class="card shadow border-0 h-100">
+        <div class="d-flex align-items-center p-3 border-bottom bg-light">
+            <img src="images/mypic.jpg" class="rounded-circle me-2" width="50" height="50">
+            <div class="d-flex flex-column">
+                <strong class="small text-black" id="chatName">AI Assistant</strong>
+                <span class="text-success small">● Online</span>
+            </div>
+            <button onclick="toggleChat()" class="btn-close ms-auto"></button>
+        </div>
+        <div id="chatMessages" class="p-3 bg-light flex-grow-1 overflow-auto" 
+            style="height: 100%; min-height: 400px; scrollbar-width: thin;">
+            <div class="d-flex mb-3">
+                <img src="images/mypic.jpg" class="rounded-circle me-2" width="36" height="36">
+                <div>
+                    <div class="small text-muted">AI</div>
+                    <div class="bg-white p-3 text-black rounded shadow-sm">
+                        Hi there! Ask me anything about programming!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer d-flex p-3">
+            <input id="userInput" type="text" class="form-control me-2" placeholder="Type a message..." style="height: 50px;">
+            <button class="btn btn-primary px-4" onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
     <script src="portfolio.js"></script>
 </body>
 </html>
