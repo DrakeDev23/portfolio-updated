@@ -1,5 +1,5 @@
 (function () {
-    emailjs.init("WBkZ-T-_iaw3o2_FA"); 
+    emailjs.init("WBkZ-T-_iaw3o2_FA");
 })();
 
 const { createApp } = Vue;
@@ -32,10 +32,9 @@ createApp({
                 { name: 'Vue.js', icon: 'fab fa-vuejs', color: '#4fc08d' },
                 { name: 'FastAPI', icon: 'fas fa-bolt', color: '#009688' },
                 { name: 'MySQL', icon: 'fas fa-database', color: '#00758f' },
-                { name: 'POSTGRESQL', icon: 'fas fa-database', color: '#00758f'},
+                { name: 'POSTGRESQL', icon: 'fas fa-database', color: '#00758f' },
                 { name: 'Bootstrap', icon: 'fab fa-bootstrap', color: '#7952b3' },
-                { name: 'ASP.NET', icon: 'fas fa-code', color: '#512BD4' },      
-                { name: 'Laravel', icon: 'fas fa-fire', color: '#FF2D20' }    
+                { name: 'ASP.NET', icon: 'fas fa-code', color: '#512BD4' }
             ],
 
             projects: [
@@ -287,7 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const input = document.getElementById("userInput");
     if (!input) return;
 
-    input.addEventListener("keydown", function(e) {
+    input.addEventListener("keydown", function (e) {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             sendMessage();
