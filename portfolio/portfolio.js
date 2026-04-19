@@ -135,6 +135,12 @@ createApp({
                     date: 'February 7, 2026',
                     description: 'Champion in the capture the flag event',
                     image: 'images/ctf.jfif'
+                },
+                {
+                    title: 'Capstone Defended',
+                    date: 'April 14, 2026',
+                    description: 'Successfully defended capstone project',
+                    image: 'images/capstone.jpg'
                 }
             ]
         };
