@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <script src="https://unpkg.com/simple-icons@v11/dist/simple-icons.min.js"></script>
     <link rel="stylesheet" href="portfolio.css">
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-lg">
@@ -78,29 +80,31 @@
             </div>
         </section>
         <section id="about" class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-4 display-5 fw-bold">About Me</h2>
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <p class="lead">
-                    Hi, I'm <strong>Drake Delos Reyes</strong>, a Bachelor of Science in Information Technology student.
-                    I enjoy building web applications, learning new technologies, and solving problems through code
-                </p>
-                <p>
-                    I'm passionate about frontend and backend development, and I love experimenting with
-                    JavaScript frameworks, APIs, and modern UI design
-                </p>
+            <div class="container">
+                <h2 class="text-center mb-4 display-5 fw-bold">About Me</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <p class="lead">
+                            Hi, I'm <strong>Drake Delos Reyes</strong>, a Bachelor of Science in Information Technology
+                            student.
+                            I enjoy building web applications, learning new technologies, and solving problems through
+                            code
+                        </p>
+                        <p>
+                            I'm passionate about frontend and backend development, and I love experimenting with
+                            JavaScript frameworks, APIs, and modern UI design
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
         <section id="projects" class="py-5 bg-light">
             <div class="container">
                 <h2 class="text-center mb-5 display-4 fw-bold">Projects</h2>
                 <div class="position-relative">
                     <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div v-for="(projectGroup, index) in projectGroups" :key="index" 
+                            <div v-for="(projectGroup, index) in projectGroups" :key="index"
                                 :class="['carousel-item', { active: index === 0 }]">
                                 <div class="row g-4">
                                     <div v-for="project in projectGroup" :key="project.id" class="col-md-4">
@@ -110,7 +114,7 @@
                                                 <h5 class="card-title">{{ project.title }}</h5>
                                                 <p class="card-text">{{ project.description }}</p>
                                                 <div class="mb-3">
-                                                    <span v-for="tag in project.tags" :key="tag" 
+                                                    <span v-for="tag in project.tags" :key="tag"
                                                         :class="['tag', `tag-${tag.color}`]">{{ tag.name }}</span>
                                                 </div>
                                             </div>
@@ -119,10 +123,12 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
@@ -136,14 +142,15 @@
                     <div class="col-lg-8">
                         <div id="eventsCarousel" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-indicators">
-                                <button v-for="(event, index) in events" :key="index" 
-                                        type="button" data-bs-target="#eventsCarousel" 
-                                        :data-bs-slide-to="index" :class="{ active: index === 0 }"></button>
+                                <button v-for="(event, index) in events" :key="index" type="button"
+                                    data-bs-target="#eventsCarousel" :data-bs-slide-to="index"
+                                    :class="{ active: index === 0 }"></button>
                             </div>
                             <div class="carousel-inner">
-                                <div v-for="(event, index) in events" :key="index" 
+                                <div v-for="(event, index) in events" :key="index"
                                     :class="['carousel-item', { active: index === 0 }]">
-                                    <img :src="event.image" class="d-block w-100" :alt="event.title" style="height: 400px; object-fit: cover;">
+                                    <img :src="event.image" class="d-block w-100" :alt="event.title"
+                                        style="height: 400px; object-fit: cover;">
                                     <div class="carousel-caption bg-dark bg-opacity-75 rounded">
                                         <h3>{{ event.title }}</h3>
                                         <p>{{ event.date }} • {{ event.location }}</p>
@@ -151,10 +158,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel"
+                                data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon"></span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#eventsCarousel" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button" data-bs-target="#eventsCarousel"
+                                data-bs-slide="next">
                                 <span class="carousel-control-next-icon"></span>
                             </button>
                         </div>
@@ -177,18 +186,22 @@
                                         </div>
                                         <div class="col-md-6">
                                             <label class="form-label">Email</label>
-                                            <input v-model="contactForm.email" type="email" class="form-control" required>
+                                            <input v-model="contactForm.email" type="email" class="form-control"
+                                                required>
                                         </div>
                                         <div class="col-12">
                                             <label class="form-label">Subject</label>
-                                            <input v-model="contactForm.subject" type="text" class="form-control" required>
+                                            <input v-model="contactForm.subject" type="text" class="form-control"
+                                                required>
                                         </div>
                                         <div class="col-12">
                                             <label class="form-label">Message</label>
-                                            <textarea v-model="contactForm.message" class="form-control" rows="5" required></textarea>
+                                            <textarea v-model="contactForm.message" class="form-control" rows="5"
+                                                required></textarea>
                                         </div>
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-primary btn-lg w-100" :disabled="isSending">
+                                            <button type="submit" class="btn btn-primary btn-lg w-100"
+                                                :disabled="isSending">
                                                 <span v-if="!isSending">Send Message</span>
                                                 <div v-else class="spinner d-inline-block me-2"></div>
                                                 <span v-if="isSending">Sending...</span>
@@ -206,7 +219,8 @@
                             <a href="https://github.com/DrakeDev23" class="social-link text-dark me-3" target="_blank">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://www.facebook.com/stephen.mart.98" class="social-link text-dark me-3" target="_blank">
+                            <a href="https://www.facebook.com/stephen.mart.98" class="social-link text-dark me-3"
+                                target="_blank">
                                 <i class="fab fa-facebook"></i>
                             </a>
                             <a href="https://www.instagram.com/0_dr4k3/" class="social-link text-dark" target="_blank">
@@ -223,45 +237,48 @@
             </div>
         </footer>
     </div>
-<button onclick="toggleChat()" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg d-flex justify-content-center align-items-center chat-btn">
-    <i class="fas fa-comment-dots fs-3"></i>
-</button>
-<button onclick="toggleChat()" 
-class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-flex justify-content-center align-items-center"
-style="width:60px;height:60px;">
-    <i class="fas fa-comment-dots fs-5"></i>
-</button>
-<div id="chatWindow" class="position-fixed bottom-0 end-0 m-4 d-none" 
-    style="width: 400px; max-width: 90vw; height: 600px; z-index:1100;">
-    <div class="card shadow border-0 h-100">
-        <div class="d-flex align-items-center p-3 border-bottom bg-light">
-            <img src="images/mypic.jpg" class="rounded-circle me-2" width="50" height="50">
-            <div class="d-flex flex-column">
-                <strong class="small text-black" id="chatName">AI Assistant</strong>
-                <span class="text-success small">● Online</span>
+    <button onclick="toggleChat()"
+        class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg d-flex justify-content-center align-items-center chat-btn">
+        <i class="fas fa-comment-dots fs-3"></i>
+    </button>
+    <button onclick="toggleChat()"
+        class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow d-flex justify-content-center align-items-center"
+        style="width:60px;height:60px;">
+        <i class="fas fa-comment-dots fs-5"></i>
+    </button>
+    <div id="chatWindow" class="position-fixed bottom-0 end-0 m-4 d-none"
+        style="width: 400px; max-width: 90vw; height: 600px; z-index:1100;">
+        <div class="card shadow border-0 h-100">
+            <div class="d-flex align-items-center p-3 border-bottom bg-light">
+                <img src="images/mypic.jpg" class="rounded-circle me-2" width="50" height="50">
+                <div class="d-flex flex-column">
+                    <strong class="small text-black" id="chatName">Drake Delos Reyes</strong>
+                    <span class="text-success small">● Online</span>
+                </div>
+                <button onclick="toggleChat()" class="btn-close ms-auto"></button>
             </div>
-            <button onclick="toggleChat()" class="btn-close ms-auto"></button>
-        </div>
-        <div id="chatMessages" class="p-3 bg-light flex-grow-1 overflow-auto" 
-            style="height: 100%; min-height: 400px; scrollbar-width: thin;">
-            <div class="d-flex mb-3">
-                <img src="images/mypic.jpg" class="rounded-circle me-2" width="36" height="36">
-                <div>
-                    <div class="small text-muted">AI</div>
-                    <div class="bg-white p-3 text-black rounded shadow-sm">
-                        Hi there! Ask me anything about programming!
+            <div id="chatMessages" class="p-3 bg-light flex-grow-1 overflow-auto"
+                style="height: 100%; min-height: 400px; scrollbar-width: thin;">
+                <div class="d-flex mb-3">
+                    <img src="images/mypic.jpg" class="rounded-circle me-2" width="36" height="36">
+                    <div>
+                        <div class="small text-muted">AI</div>
+                        <div class="bg-white p-3 text-black rounded shadow-sm">
+                            Hi there! Ask me anything about my tech stack, projects, events etc!
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card-footer d-flex p-3">
-            <input id="userInput" type="text" class="form-control me-2" placeholder="Type a message..." style="height: 50px;">
-            <button class="btn btn-primary px-4" onclick="sendMessage()">
-                <i class="fas fa-paper-plane"></i>
-            </button>
+            <div class="card-footer d-flex p-3">
+                <input id="userInput" type="text" class="form-control me-2" placeholder="Type a message..."
+                    style="height: 50px;">
+                <button class="btn btn-primary px-4" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
         </div>
     </div>
-</div>
     <script src="portfolio.js"></script>
 </body>
+
 </html>
