@@ -262,7 +262,7 @@ function sendMessage() {
 
     const message = rawMessage.toLowerCase();
     let reply = "";
-    if (message.includes("hi") || message.includes("hello")) reply = "Hello! I'm Drake's assistant!";
+    if (message.includes("hi") || message.includes("hello")) reply = "Hello! I'm Drake Delos Reyes!";
     else if (message.includes("projects") || message.includes("project")) reply = "Drake built E-commerce, Jeepney Finder, and more. Check out <a href='#projects'>Projects</a>";
     else if (message.includes("skills")) reply = "Drake is skilled in HTML, CSS, JS, Vue.js, PHP, Python, C, C++, C#, TailwindCSS, Bootstrap, MySQL, PostgreSQL, Laravel, FastAPI, and ASP.NET.";
     else if (message.includes("contact")) reply = "You can reach Drake via the <a href='#contact'>contact form</a>.";
