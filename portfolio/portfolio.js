@@ -102,6 +102,19 @@ createApp({
                         { name: 'MySQL', color: 'cyan' },
                         { name: 'JavaScript', color: 'purple' }
                     ],
+                },
+                {
+                    id: 7,
+                    title: "Real Estate Website",
+                    description: "A real estate website helping users find properties",
+                    image: "images/realEstate.png",
+                    tags: [
+                        { name: 'HTML', color: 'orange' },
+                        { name: 'Css', color: 'green' },
+                        { name: 'Javascript', color: 'yellow' },
+                        { name: 'ASP.NET', color: 'purple' },
+                        { name: 'SQLLITE', color: 'blue' }
+                    ],
                 }
             ],
 
